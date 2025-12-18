@@ -10,7 +10,7 @@ const { OrderModel } = require('./models/OrderModel');
 const bodyParser = require('body-parser');
 const authRoute =require('./Routes/authRoute')
 const uri = process.env.MONGO_URL;
-const port = process.env.PORT || 8001;
+const port = process.env.PORT;
 app.use(cors({
     origin: ["http://localhost:5173",
              "http://localhost:3000"
