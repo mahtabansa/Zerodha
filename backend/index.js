@@ -12,9 +12,7 @@ const authRoute =require('./Routes/authRoute')
 const uri = process.env.MONGO_URL;
 const port = process.env.PORT;
 app.use(cors({
-    origin: ["http://localhost:5173",
-             "http://localhost:3000"
-            ],
+    origin: ["http://localhost:5173"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   }));
@@ -311,7 +309,9 @@ app.post("/neworder", async (req, res) => {
 
 app.listen(port,() => {
       console.log(`server is running on port ${port}`);
-    mongoose.connect(uri ,{
+    mongoose.connect(uri ,crypto: {
+        secret:process.env.MONGODB_SECRET,
+    },{
     
   })
    .then(() => console.log("MongoDB is  connected successfully"))
