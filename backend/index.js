@@ -309,11 +309,12 @@ app.post("/neworder", async (req, res) => {
 
 app.listen(port,() => {
       console.log(`server is running on port ${port}`);
-    mongoose.connect(uri ,crypto: {
-        secret:process.env.MONGODB_SECRET,
-    },{
-    
-  })
+    mongoose.connect(uri,
+      {
+        crypto: {
+          secret: process.env.MONGODB_SECRET
+        }
+      })
    .then(() => console.log("MongoDB is  connected successfully"))
   .catch((err) => console.error(err));
 
