@@ -13,7 +13,7 @@ const uri = process.env.MONGO_URL;
 const port = process.env.PORT;
 app.use(cors({
     origin: ["http://localhost:3000",
-            "stockplatform.netlify.app"],
+            "https://stockplatform.netlify.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   }));
